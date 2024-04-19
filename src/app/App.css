@@ -1,14 +1,10 @@
 /* active menu's style in side-panel/bar */
 
 .active {
-    background-color: #41c674;
+    background-color: #53ffe126;
     border-radius: 8px;
 }
 
-.active span.inline-block img {
-    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) hue-rotate(0deg);
-}
-
 .active span {
-    color: white;
+    color: black;
 }

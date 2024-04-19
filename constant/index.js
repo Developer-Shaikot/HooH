@@ -31,7 +31,7 @@ export const adminLinks = [
                 link: "blog",
             },
             {
-                name: "Upcoming - events",
+                name: "Events",
                 icon: "/icons/event-upcoming-rounded.svg",
                 link: "upcoming-event",
             },

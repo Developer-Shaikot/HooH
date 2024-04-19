@@ -1,10 +1,19 @@
 import { Outlet } from "react-router-dom";
+import Navbar from "../components/navbar/Navbar";
+import ScrollToTop from "../components/ScrollTop";
+import { Sidebar } from "../components/sidebar/Sidebar";
 
 export default function BlankLayout() {
     return (
         <>
-            {/* Blank layout routes (404 page, login page those page doesn't need common components like nav, sidebar etch) children will placed here by default */}
-            <Outlet />
+            <Navbar />
+            <div className="ml-0 lg:ml-[220px] min-h-screen bg-white dark:bg-dark-theme">
+                <ScrollToTop>
+                    {/* Main layout routes children will placed here by default */}
+                    <Outlet />
+                </ScrollToTop>
+            </div>
+            <Sidebar />
         </>
     );
 }

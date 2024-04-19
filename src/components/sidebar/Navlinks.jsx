@@ -13,21 +13,21 @@ export default function Navlinks({ routeInfo }) {
     return (
         <>
             <div className="mb-5">
-                <span className="font-manrope text-gray-300 text-base select-none leading-tight whitespace-nowrap">
+                <span className="font-manrope text-gray-500 text-base select-none leading-tight whitespace-nowrap">
                     {routeInfo.title}
                 </span>
                 {routeInfo.links.map((link, index) => (
                     <NavigationLink
                         key={index}
                         to={link.link}
-                        className="flex h-12 items-center gap-[12px] p-[12px] mt-5"
+                        className="hover:bg-[#53FFE126] rounded text-gray-700 hover:text-gray-700  flex  h-12 items-center gap-[12px] p-[12px] mt-5"
                         onClick={handleExpand}
                     >
                         <span className="inline-block">
-                            <img src={link.icon} alt={link.name} />
+                            <img src={link.icon} alt={link.name} className="hover:filter-custom" />
                         </span>
 
-                        <span className="font-manrope text-gray-300 text-base select-none leading-tight whitespace-nowrap">
+                        <span className="font-manrope text-base select-none leading-tight whitespace-nowrap">
                             {link.name}
                         </span>
                     </NavigationLink>
