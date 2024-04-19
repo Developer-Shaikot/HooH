@@ -7,7 +7,7 @@ export default function MainLayout() {
     return (
         <>
             <Navbar />
-            <div className="ml-0 lg:ml-[220px] min-h-screen bg-white dark:bg-dark-theme">
+            <div className="ml-0 min-h-screen bg-white dark:bg-dark-theme">
                 <ScrollToTop>
                     {/* Main layout routes children will placed here by default */}
                     <Outlet />

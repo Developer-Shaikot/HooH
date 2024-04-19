@@ -17,8 +17,8 @@ export const Sidebar = () => {
         <OutsideClickHandler disabled={!isSidebarOpen} onOutsideClick={() => dispatch(close())}>
             <aside
                 id="sidebar"
-                className={`w-[220px] h-[calc(100vh-90px)] lg:h-screen bg-white fixed top-[92px] lg:top-0 ${
-                    isSidebarOpen ? "left-0" : "left-[-300px]"
+                className={`w-[220px] h-[calc(100vh-90px)] lg:h-screen bg-white fixed top-[82px] ${
+                    isSidebarOpen ? "left-0" : "lg:left-[-300px] left-[-300px]"
                 } transition-all lg:left-0 overflow-y-auto z-20`}
             >
                 <div className="p-[12px] mt-5">

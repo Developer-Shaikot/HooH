@@ -16,7 +16,7 @@ export default function Navbar() {
 
     return (
         <>
-            <nav className="h-[82px] border-b-2 bg-default-theme dark:bg-dark-theme border-gray-200 dark:border-slate-700 ml-0 lg:ml-[220px] flex items-center gap-2 p-4 md:p-6 justify-between sticky top-0 z-20">
+            <nav className="h-[82px] border-b-2 bg-default-theme dark:bg-dark-theme border-gray-200 dark:border-slate-700 ml-0 flex items-center gap-2 p-4 md:p-6 justify-between sticky top-0 z-20">
                 <div className="flex items-center gap-5">
                     <ResponsiveBrand />
                     <NavBrand />

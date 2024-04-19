@@ -1,30 +1,30 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-	sidebar: true,
-	expand: true,
+    sidebar: true,
+    expand: true,
 };
 
 export const drawerSlice = createSlice({
-	name: "drawer",
-	initialState,
-	reducers: {
-		open: (state) => {
-			state.sidebar = true;
-		},
-		toggle: (state) => {
-			state.sidebar = !state.sidebar;
-		},
-		close: (state) => {
-			state.sidebar = false;
-		},
-		expand: (state) => {
-			state.expand = true;
-		},
-		unExpand: (state) => {
-			state.expand = false;
-		},
-	},
+    name: "drawer",
+    initialState,
+    reducers: {
+        open: (state) => {
+            state.sidebar = true;
+        },
+        toggle: (state) => {
+            state.sidebar = !state.sidebar;
+        },
+        close: (state) => {
+            state.sidebar = false;
+        },
+        expand: (state) => {
+            state.expand = true;
+        },
+        unExpand: (state) => {
+            state.expand = false;
+        },
+    },
 });
 
 export const sidebarStatus = (state) => state.drawer.sidebar;
