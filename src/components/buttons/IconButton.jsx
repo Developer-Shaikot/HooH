@@ -2,8 +2,7 @@ import PropTypes from "prop-types";
 
 export default function IconButton({
     onClick = () => false,
-    icon,
-    iconWidth = "min-w-[12px]",
+
     text,
     width = "w-auto",
     color = "text-neutral-800",
@@ -13,7 +12,6 @@ export default function IconButton({
     height = "h-10",
     disabled = false,
     hideTextOnResponsive = false,
-    iconClassName,
     type = "button",
 }) {
     return (
@@ -27,12 +25,6 @@ export default function IconButton({
                 border ? "border border-gray-300 dark:border-slate-700" : ""
             } px-[14px] whitespace-nowrap transition-all active:scale-95`}
         >
-            <img
-                src={icon}
-                className={`${!startIcon ? "order-3" : "order-1"} ${iconWidth} ${iconClassName} ${
-                    disabled && "opacity-60"
-                }`}
-            />
             {text && (
                 <span
                     className={`text-sm font-inter font-medium leading-snug ${
@@ -47,7 +39,6 @@ export default function IconButton({
 }
 
 IconButton.propTypes = {
-    icon: PropTypes.string.isRequired,
     onClick: PropTypes.func,
     border: PropTypes.bool,
     text: PropTypes.string,

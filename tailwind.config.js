@@ -43,6 +43,9 @@ export default {
             backgroundImage: {
                 select: "url('/icons/arrow-down.svg')",
             },
+            pointerEvents: {
+                auto: "auto",
+            },
         },
     },
     variants: {
