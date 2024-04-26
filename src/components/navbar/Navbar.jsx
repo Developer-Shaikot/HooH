@@ -18,6 +18,7 @@ export default function Navbar() {
 
     function toggleLoginForm() {
         setLoginFormVisible(!loginFormVisible);
+        console.log("loginForm");
     }
 
     function toggleSidebar() {
@@ -75,7 +76,6 @@ export default function Navbar() {
                 </Overlay>
             )}
             {loginFormVisible && <LoginForm onClose={toggleLoginForm} />}
-            {/* Render the sidebar based on its visibility state */}
             {sidebarVisible && <Sidebar />}
         </>
     );

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useCallback, useState } from "react";
 
 export default function Carousel() {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -6,41 +6,25 @@ export default function Carousel() {
         "/images/Rectangle 32.jpg",
         "/images/manya-krishnaswamy-RZUkK7Tb-Hw-unsplash.jpg",
         "/images/venti-views--9nM8E5_CmY-unsplash.jpg",
-        // Add more image paths as needed
     ];
 
-    const nextSlide = () => {
+    const nextSlide = useCallback(() => {
         setCurrentSlide((currentSlide + 1) % images.length);
-    };
+    }, [currentSlide, images.length]);
 
-    const prevSlide = () => {
-        setCurrentSlide((currentSlide - 1 + images.length) % images.length);
-    };
-
-    // Set up an interval to automatically advance the carousel
     useEffect(() => {
-        const intervalId = setInterval(nextSlide, 3000); // Change image every 3 seconds
-
-        // Clear the interval when the component unmounts
+        const intervalId = setInterval(nextSlide, 3000);
         return () => clearInterval(intervalId);
-    }, [currentSlide]); // Depend on currentSlide to reset the interval if needed
+    }, [currentSlide, nextSlide]);
 
     return (
         <div className="flex flex-col items-center justify-center h-screen">
-            <div className="w-full h-full">
+            <div className="w-full min-h-screen	">
                 <img
                     src={images[currentSlide]}
                     alt={`Slide ${currentSlide + 1}`}
                     className="object-cover w-full h-full"
                 />
-            </div>
-            <div className="absolute top bottom-0 left-0 right-0 flex justify-between p-4">
-                <button onClick={prevSlide} className="bg-white bg-opacity-50 p-2 rounded-full">
-                    Prev
-                </button>
-                <button onClick={nextSlide} className="bg-white bg-opacity-50 p-2 rounded-full">
-                    Next
-                </button>
             </div>
         </div>
     );
