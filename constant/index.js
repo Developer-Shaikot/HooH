@@ -1,78 +1,78 @@
 // sidebar links for admin
 export const adminLinks = [
-    {
-        title: "HOMEPAGE",
-        links: [
-            {
-                name: "Home",
-                icon: "/icons/home.svg",
-                link: "",
-            },
-        ],
-    },
-    {
-        title: "TOURISM-UPDATES",
-        links: [
-            {
-                name: "Tour by choice",
-                icon: "/icons/tourByChoice.svg",
-                link: "tour-by-choice",
-            },
+	{
+		title: "HOMEPAGE",
+		links: [
+			{
+				name: "Home",
+				icon: "/icons/home.svg",
+				link: "",
+			},
+		],
+	},
+	{
+		title: "TOURISM-UPDATES",
+		links: [
+			{
+				name: "Tour by choice",
+				icon: "/icons/tourByChoice.svg",
+				link: "tour-by-choice",
+			},
 
-            {
-                name: "Package  tour",
-                icon: "/icons/tourbox.svg",
-                link: "package-tour",
-            },
+			{
+				name: "Package  tour",
+				icon: "/icons/tourbox.svg",
+				link: "package-tour",
+			},
 
-            {
-                name: "Blog",
-                icon: "/icons/blog.svg",
-                link: "blog",
-            },
-            {
-                name: "Events",
-                icon: "/icons/event-upcoming-rounded.svg",
-                link: "upcoming-event",
-            },
-        ],
-    },
-    {
-        title: "GENERAL",
-        links: [
-            {
-                name: "About Us",
-                icon: "/icons/abt.svg",
-                link: "about us",
-            },
+			{
+				name: "Blog",
+				icon: "/icons/blog.svg",
+				link: "blog",
+			},
+			{
+				name: "Events",
+				icon: "/icons/event-upcoming-rounded.svg",
+				link: "upcoming-event",
+			},
+		],
+	},
+	{
+		title: "GENERAL",
+		links: [
+			{
+				name: "About Us",
+				icon: "/icons/abt.svg",
+				link: "about us",
+			},
 
-            {
-                name: "Reviews",
-                icon: "/icons/review.svg",
-                link: "reviews",
-            },
-        ],
-    },
-    {
-        title: "SUPPORT",
-        links: [
-            {
-                name: "Contacts",
-                icon: "/icons/contact.svg",
-                link: "contact",
-            },
+			{
+				name: "Reviews",
+				icon: "/icons/review.svg",
+				link: "reviews",
+			},
+		],
+	},
+	{
+		title: "SUPPORT",
+		links: [
+			{
+				name: "Contacts",
+				icon: "/icons/contact.svg",
+				link: "contact",
+			},
 
-            {
-                name: "FAQ",
-                icon: "/icons/faq.svg",
-                link: "faq",
-            },
-        ],
-    },
+			{
+				name: "FAQ",
+				icon: "/icons/faq.svg",
+				link: "faq",
+			},
+		],
+	},
 ];
 
 export const defaultImage =
-    "https://res.cloudinary.com/hostingimagesservice/image/upload/v1680632612/mediAid/default-profile-pic_lktd2q.webp";
+	"https://res.cloudinary.com/hostingimagesservice/image/upload/v1680632612/mediAid/default-profile-pic_lktd2q.webp";
 
 // {
 //     name: "order",
@@ -158,3 +158,25 @@ export const defaultImage =
 //     icon: "/icons/settings.svg",
 //     link: "settings",
 // },
+
+export const transportationData = [
+	{
+		id: 1,
+		image: "/images/bus.png",
+		heading: "Local Transports",
+		description: "Lorem Ipsum is simply dummy text of the printing and",
+	},
+	{
+		id: 2,
+		image: "/images/car.png",
+		heading: "Private Car services",
+		description: "Lorem Ipsum is simply dummy text of the printing and",
+	},
+	{
+		id: 3,
+		image: "/images/bike.png",
+		heading: "Bike services",
+		description:
+			"Lorem Ipsum is simply dummy text of the printing and text of the printing end",
+	},
+];

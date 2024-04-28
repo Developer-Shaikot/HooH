@@ -2,11 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+.green-image {
+    filter: grayscale(0%) brightness(100%) saturate(10000%) hue-rotate(90deg);
+}
+
 /* -----------------scrollbar------------------ */
 /* width */
 ::-webkit-scrollbar {
     width: 4px;
 }
+
 /* Custom gradient */
 .custom-gradient {
     background: linear-gradient(160deg, rgba(0, 109, 90, 0.9) 2.35%, rgba(0, 109, 90, 0.37) 93.92%);
@@ -36,7 +41,7 @@
 }
 
 ::selection {
-    background-color: #73fff8;
+    background-color: #006d5a;
     color: white;
 }
 
