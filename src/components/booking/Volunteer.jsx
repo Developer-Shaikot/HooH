@@ -27,7 +27,6 @@ export default function Volunteer({ data, selected, handleSelect }) {
 					size={24}
 					activeColor="#ffd700"
 				/>
-				,
 			</div>
 		</article>
 	);

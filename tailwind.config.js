@@ -40,6 +40,7 @@ export default {
 				"dark-200": "#000",
 
 				"black-50": "#091F1B",
+				"black-25": "#413D3D",
 				primary: "#006D5A",
 			},
 			backgroundImage: {

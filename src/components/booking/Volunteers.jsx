@@ -19,7 +19,7 @@ export default function Volunteers() {
 	return (
 		<div className="mt-4">
 			<div className="flex justify-between items-center">
-				<div className="flex items-center font-bold text-[20px] gap-1.5 mb-4">
+				<div className="flex items-center font-bold text-[20px] text-black-50 gap-1.5 mb-4">
 					<img src="/icons/select-location.svg" className="w-4" alt="" />
 					Select Suitable Volunteer
 				</div>

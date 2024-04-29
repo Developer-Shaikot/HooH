@@ -6,6 +6,10 @@
     filter: grayscale(0%) brightness(100%) saturate(10000%) hue-rotate(90deg);
 }
 
+.white-image {
+    filter: invert(100%);
+}
+
 /* -----------------scrollbar------------------ */
 /* width */
 ::-webkit-scrollbar {
@@ -47,6 +51,5 @@
 
 img,
 svg {
-    pointer-events: none;
     user-select: none;
 }

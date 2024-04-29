@@ -198,7 +198,7 @@ export const volunteerData = [
 	},
 	{
 		id: crypto.randomUUID(),
-		name: "Dell Doe",
+		name: "Rayhan Doe",
 		image: "https://randomuser.me/api/portraits/men/1.jpg",
 		description: "Fluent in Bangla, English & Hindi, adept in communication & leadership",
 		rating: 5,
@@ -226,9 +226,48 @@ export const volunteerData = [
 	},
 	{
 		id: crypto.randomUUID(),
-		name: "Oggy Doe",
+		name: "William Doe",
 		image: "https://randomuser.me/api/portraits/men/8.jpg",
 		description: "Fluent in Bangla, English & Hindi, adept in communication & leadership",
 		rating: 3.7,
 	},
 ];
+
+// city's center latitude and longitude according to the google maps
+export const locations = {
+	dhaka: { lat: 23.7952, lon: 90.4162 },
+	oldDhaka: { lat: 23.7981, lon: 90.4121 },
+	rajshahi: { lat: 24.3736, lon: 88.6048 },
+	khulna: { lat: 22.8472, lon: 89.5367 },
+	barishal: { lat: 22.7111, lon: 90.3509 },
+	mymensingh: { lat: 24.7466, lon: 90.4155 },
+	rangpur: { lat: 25.749, lon: 89.2591 },
+	chattogram: { lat: 22.3757, lon: 91.8115 },
+	sylhet: { lat: 24.903, lon: 91.8648 },
+};
+
+// WMO Weather interpretation codes (WW)
+export const weatherCode = {
+	0: "Clear sky",
+	1: "Mainly clear",
+	2: "Partly cloudy",
+	3: "Overcast",
+	45: "Haze",
+	48: "Depositing rime fog",
+	51: "Drizzle: Light intensity",
+	52: "Drizzle: Moderate intensity",
+	53: "Drizzle: Dense intensity",
+	56: "Freezing Drizzle: Light intensity",
+	57: "Freezing Drizzle: Dense intensity",
+	61: "Rain: Slight intensity",
+	63: "Rain: Moderate intensity",
+	65: "Rain: Heavy intensity",
+	66: "Freezing Rain: Light intensity",
+	67: "Freezing Rain: Heavy intensity",
+	80: "Rain showers: Slight intensity",
+	81: "Rain showers: Moderate intensity",
+	82: "Rain showers: Violent intensity",
+	95: "Thunderstorm: Slight or moderate",
+	96: "Thunderstorm with slight hail",
+	99: "Thunderstorm with heavy hail",
+};

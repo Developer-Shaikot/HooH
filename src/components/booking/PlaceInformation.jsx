@@ -30,7 +30,7 @@ export default function PlaceInformation() {
 			{/* -------------- transportation --------------- */}
 			<div className="mt-2">
 				<h1 className="font-semibold mb-3 text-[26px] text-black-50">Transportation</h1>
-				<div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+				<div className="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2">
 					{transportationData.map((data) => (
 						<TransportationCard key={data.id} data={data} />
 					))}
