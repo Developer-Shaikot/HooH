@@ -161,22 +161,74 @@ export const defaultImage =
 
 export const transportationData = [
 	{
-		id: 1,
+		id: crypto.randomUUID(),
 		image: "/images/bus.png",
 		heading: "Local Transports",
 		description: "Lorem Ipsum is simply dummy text of the printing and",
 	},
 	{
-		id: 2,
+		id: crypto.randomUUID(),
 		image: "/images/car.png",
 		heading: "Private Car services",
 		description: "Lorem Ipsum is simply dummy text of the printing and",
 	},
 	{
-		id: 3,
+		id: crypto.randomUUID(),
 		image: "/images/bike.png",
 		heading: "Bike services",
 		description:
 			"Lorem Ipsum is simply dummy text of the printing and text of the printing end",
+	},
+];
+
+export const volunteerData = [
+	{
+		id: crypto.randomUUID(),
+		name: "John Doe",
+		image: "https://randomuser.me/api/portraits/men/2.jpg",
+		description: "Fluent in Bangla, English & Hindi, adept in communication & leadership",
+		rating: 3,
+	},
+	{
+		id: crypto.randomUUID(),
+		name: "Dave Doe",
+		image: "https://randomuser.me/api/portraits/men/3.jpg",
+		description: "Fluent in Bangla, English & Hindi, adept in communication & leadership",
+		rating: 4,
+	},
+	{
+		id: crypto.randomUUID(),
+		name: "Dell Doe",
+		image: "https://randomuser.me/api/portraits/men/1.jpg",
+		description: "Fluent in Bangla, English & Hindi, adept in communication & leadership",
+		rating: 5,
+	},
+	{
+		id: crypto.randomUUID(),
+		name: "Jack Doe",
+		image: "https://randomuser.me/api/portraits/men/5.jpg",
+		description: "Fluent in Bangla, English & Hindi, adept in communication & leadership",
+		rating: 4,
+	},
+	{
+		id: crypto.randomUUID(),
+		name: "Adrian Doe",
+		image: "https://randomuser.me/api/portraits/men/6.jpg",
+		description: "Fluent in Bangla, English & Hindi, adept in communication & leadership",
+		rating: 4.5,
+	},
+	{
+		id: crypto.randomUUID(),
+		name: "John Doe",
+		image: "https://randomuser.me/api/portraits/men/7.jpg",
+		description: "Fluent in Bangla, English & Hindi, adept in communication & leadership",
+		rating: 3.5,
+	},
+	{
+		id: crypto.randomUUID(),
+		name: "Oggy Doe",
+		image: "https://randomuser.me/api/portraits/men/8.jpg",
+		description: "Fluent in Bangla, English & Hindi, adept in communication & leadership",
+		rating: 3.7,
 	},
 ];
