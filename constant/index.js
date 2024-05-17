@@ -308,6 +308,30 @@ export const packageData = [
     },
 ];
 
+export const eventsData = [
+    {
+        id: crypto.randomUUID(),
+        title: "The Home Of Royal Bengal Tigers",
+        image: "/images/tiger.jpg",
+        time: "9 hours",
+        price: 320,
+    },
+    {
+        id: crypto.randomUUID(),
+        title: "Cherry Blossoms Festivals Of Japan",
+        image: "/images/Cherry.jpg",
+        time: "10 days",
+        price: 2450,
+    },
+    {
+        id: crypto.randomUUID(),
+        title: "Venice City Tour Festivals Italy",
+        image: "/images/Italy.jpg",
+        time: "8 days",
+        price: 2820,
+    },
+];
+
 // city's center latitude and longitude according to the google maps
 export const locations = {
     dhaka: { lat: 23.7952, lon: 90.4162 },

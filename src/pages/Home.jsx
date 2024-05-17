@@ -1,3 +1,4 @@
+import Event from "../components/Events/Event";
 import Carousel from "../components/Home/Carousel";
 import CustomizePlan from "../components/Home/CustomizePlan";
 import TopVlaueSection from "../components/Home/TopVlaueSection";
@@ -23,8 +24,11 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-            <section className="px-10 pb-12 border-black border-b-2">
+            <section className="px-10 pb-24 border-[#006D5A57] border-b-2">
                 <Package />
+            </section>
+            <section className="px-10 py-24 pb-12 ">
+                <Event />
             </section>
         </section>
     );
