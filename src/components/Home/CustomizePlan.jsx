@@ -5,8 +5,8 @@ export default function CustomizePlan() {
     return (
         <section>
             <div className="grid grid-cols-1 md:grid-cols-2 py-5">
-                <div className="px-20">
-                    <div className="text-gray-900 text-4xl font-semibold py-28">
+                <div className="px-5 sm:px-20">
+                    <div className="text-gray-900 text-2xl sm:text-4xl font-semibold py-5 sm:py-28">
                         Customize Your Tour Plan
                     </div>
                     <div className="mt-3">
