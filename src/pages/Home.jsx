@@ -15,7 +15,7 @@ export default function Home() {
             <section className="hidden md:block">
                 <TopVlaueSection />
             </section>
-            <section>
+            <section className="px-10 md:px-40">
                 <CustomizePlan />
             </section>
             <section className="pb-12">
@@ -25,14 +25,16 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-            <section className="px-10 pb-24 border-[#006D5A57] border-b-2">
+            <section className="px-10 md:px-40 pb-24 border-[#006D5A57] border-b-2">
                 <Package />
             </section>
-            <section className="px-10 py-24 pb-12 ">
+            <section className="px-0 md:px-40 py-24 pb-12 ">
                 <Event />
             </section>
-            <section className="px-10 py-24 pb-12 ">
-                <About />
+            <section className="px-32 py-10 bg-teal-100 h-5  border-t border-emerald-700 pb-0 hidden md:block">
+                <div className="mt-12">
+                    <About />
+                </div>
             </section>
         </section>
     );

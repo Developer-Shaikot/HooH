@@ -10,7 +10,7 @@ export default function Events({ data }) {
                     />
                 </div>
                 <div className="py-8 px-2">
-                    <h1 className="font-semibold text-2xl text-primary mx-2 mt-1">{data.title}</h1>
+                    <h1 className="font-semibold text-xl text-primary mx-2 mt-1">{data.title}</h1>
                     <div>
                         <div className="flex justify-between mx-1 py-2">
                             <div className=" text-black text-3xl font-medium">${data.price}</div>
