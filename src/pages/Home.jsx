@@ -1,3 +1,4 @@
+import About from "../components/About/About";
 import Event from "../components/Events/Event";
 import Carousel from "../components/Home/Carousel";
 import CustomizePlan from "../components/Home/CustomizePlan";
@@ -29,6 +30,9 @@ export default function Home() {
             </section>
             <section className="px-10 py-24 pb-12 ">
                 <Event />
+            </section>
+            <section className="px-10 py-24 pb-12 ">
+                <About />
             </section>
         </section>
     );
