@@ -1,6 +1,16 @@
 // sidebar links for admin
 export const adminLinks = [
     {
+        title: "Dashboard",
+        links: [
+            {
+                name: "Dashboard",
+                icon: "/icons/icons8-dashboard-layout-24.png",
+                link: "dashboard",
+            },
+        ],
+    },
+    {
         title: "HOMEPAGE",
         links: [
             {
