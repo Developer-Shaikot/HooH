@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import { useGetLoggedInUserQuery } from "../feature/auth/authSlice";
+import { useLoggedInUserQuery } from "../feature/auth/authSlice";
 
 export function useAuth() {
-    const { data, isLoading, isSuccess } = useGetLoggedInUserQuery();
-    const [user, setUser] = useState(data?.user);
+	const { data, isLoading, isSuccess } = useLoggedInUserQuery();
+	const [user, setUser] = useState(data?.user);
 
-    useEffect(() => {
-        setUser(data?.user);
-    }, [isLoading, data]);
+	useEffect(() => {
+		setUser(data?.user);
+	}, [isLoading, data]);
 
-    return { user, isLoading, isSuccess };
+	return { user, isLoading, isSuccess };
 }

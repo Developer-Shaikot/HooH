@@ -5,7 +5,7 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
 		register: builder.mutation({
 			query: (body) => {
 				return {
-					url: "/auth/register",
+					url: "/user/register",
 					method: "POST",
 					body,
 				};
@@ -15,52 +15,29 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
 
 		login: builder.mutation({
 			query: (body) => ({
-				url: "/auth/login",
+				url: "/user/login",
 				method: "POST",
 				body,
 			}),
-			invalidatesTags: ["Profile", "Dashboard"],
-		}),
-
-		loginWithGoogle: builder.mutation({
-			query: (body) => ({
-				url: "/auth/login-google",
-				method: "POST",
-				body,
-			}),
-			invalidatesTags: ["Profile", "Dashboard"],
-		}),
-
-		getLoggedInUser: builder.query({
-			query: () => "/auth/loggedin-user",
-			providesTags: ["Profile", "User"],
+			invalidatesTags: ["Profile", "PendingReceive"],
 		}),
 
 		logout: builder.mutation({
 			query: (body) => ({
-				url: "/auth/logout",
-				method: "PATCH",
-				body,
-			}),
-			invalidatesTags: ["Profile", "User"],
-		}),
-
-		resetPassword: builder.mutation({
-			query: (body) => ({
-				url: "/auth/reset-password",
+				url: "/user/logout",
 				method: "POST",
 				body,
 			}),
 			invalidatesTags: ["Profile"],
 		}),
+
+		loggedInUser: builder.query({
+			query: () => ({
+				url: "/user",
+			}),
+		}),
 	}),
 });
 
-export const {
-	useRegisterMutation,
-	useLoginMutation,
-	useLoginWithGoogleMutation,
-	useLogoutMutation,
-	useGetLoggedInUserQuery,
-	useResetPasswordMutation,
-} = extendedApiSlice;
+export const { useRegisterMutation, useLoginMutation, useLogoutMutation, useLoggedInUserQuery } =
+	extendedApiSlice;

@@ -39,6 +39,15 @@ export default function Navbar() {
 					<button onClick={toggleSidebar} className="md:hidden">
 						{/* Hamburger icon */}
 					</button>
+					<div
+						className="w-8 h-8 flex items-center mr-3 cursor-pointer"
+						title="login"
+						onClick={() => setLoginFormVisible(true)}
+					>
+						<div className="cursor-pointer relative text-white font-semibold">
+							Login
+						</div>
+					</div>
 					<div className="w-8 h-8 flex items-center" title="Notification">
 						<div className="cursor-pointer relative">
 							<img
@@ -78,7 +87,7 @@ export default function Navbar() {
 					<Notification closeNotificationPopup={closeNotificationPopup} />
 				</Overlay>
 			)}
-			{loginFormVisible && <LoginForm onClose={toggleLoginForm} />}
+			{loginFormVisible && <LoginForm onClose={setLoginFormVisible} />}
 			{sidebarVisible && <Sidebar />}
 		</>
 	);
