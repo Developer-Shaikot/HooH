@@ -29,6 +29,7 @@ export default function Navbar() {
 	}
 
 	function toggleSidebar() {
+		console.log("clicked", sidebarVisible);
 		setSidebarVisible(!sidebarVisible);
 	}
 

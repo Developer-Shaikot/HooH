@@ -45,12 +45,13 @@ export default function RegNonePointer({ onClose, className, setIsLoginActive })
 				.then((data) => {
 					if (data.success) {
 						toast.success("Registered successfully");
-						return setIsLoginActive(true);
+						setIsLoginActive(true);
+					} else {
+						toast.error(`Error: ${data?.message}`);
+						console.error(data);
 					}
-					toast.error(`Error: ${data?.message}`);
-					console.error(data);
 				})
-				.catch((err) => toast.error(`Error: ${err.message}`));
+				.catch((err) => toast.error(`Error: ${err.data?.message}`));
 		}
 	};
 

@@ -15,12 +15,16 @@ export default function LoginNonePointer({ onClose, className, setIsLoginActive 
 			.then((data) => {
 				if (data.success) {
 					onClose();
-					return toast.success("Login successful");
+					toast.success("Login successful");
+				} else {
+					toast.error(`Error: ${data.message}`);
+					console.error(data);
 				}
-				toast.error(`Error: ${data?.message}`);
-				console.error(data);
 			})
-			.catch((err) => toast.error(`Error: ${err.message}`));
+			.catch((err) => {
+				toast.error(`Error: ${err.data?.message}`);
+				console.error(err);
+			});
 	};
 
 	return (

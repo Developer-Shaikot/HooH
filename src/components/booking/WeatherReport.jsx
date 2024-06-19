@@ -48,7 +48,7 @@ export default function WeatherReport({ location = "dhaka" }) {
 						/>
 						<div>
 							<h1 className="font-semibold text-black-50 text-3xl">
-								{Math.ceil(data.current?.temperature_2m)} ° C
+								{Math.round(data.current?.temperature_2m)} ° C
 							</h1>
 							<p className="text-sm text-black-70">
 								{weatherCode[data.current?.weather_code]}
