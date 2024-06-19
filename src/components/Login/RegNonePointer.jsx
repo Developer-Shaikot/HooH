@@ -36,7 +36,6 @@ export default function RegNonePointer({ onClose, className, setIsLoginActive })
 							"Applied successfully, wait until admin approve your application"
 						);
 					}
-					console.log(data);
 				})
 				.catch((err) => toast.error(`Error: ${err.message}`));
 		} else {

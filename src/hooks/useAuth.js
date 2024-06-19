@@ -1,15 +1,28 @@
 import { useEffect, useState } from "react";
 import { useLoggedInUserQuery } from "../feature/auth/authSlice";
+import { useNavigate } from "react-router-dom";
 
 export function useAuth() {
-	const { data, isLoading, isSuccess } = useLoggedInUserQuery();
-	const [user, setUser] = useState(data?.user);
+	const { data, isSuccess, isError } = useLoggedInUserQuery();
+	const [user, setUser] = useState({});
+	const [isLoading, setIsLoading] = useState(true);
+	const navigate = useNavigate();
 
 	useEffect(() => {
-		setUser(data?.user);
-	}, [isLoading, data]);
+		if (isSuccess && data?.user) {
+			setUser(data.user);
+			setIsLoading(false);
+		}
 
-	const resetAuth = () => setUser(undefined);
+		if (isError) {
+			setIsLoading(false);
+		}
+	}, [data, isSuccess, isError]);
 
-	return { user, isLoading, resetAuth, isSuccess };
+	const resetAuth = () => {
+		setUser({});
+		navigate("/");
+	};
+
+	return { user, isLoading, resetAuth };
 }

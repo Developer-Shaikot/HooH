@@ -13,14 +13,14 @@ const dummyUser = {
 };
 
 function App() {
-	const { user, isLoading, isSuccess } = useAuth();
+	const { user, isLoading } = useAuth();
 
 	return (
 		<>
-			<AuthContext.Provider value={{ user: user || dummyUser, isLoading, isSuccess }}>
+			<AuthContext.Provider value={{ user: user || dummyUser, isLoading }}>
 				<Routers />
 				<ChatContainer />
-				<Toaster position="top-right" richColors toastOptions={{ duration: 2300 }} />
+				<Toaster position="top-center" richColors toastOptions={{ duration: 2300 }} />
 			</AuthContext.Provider>
 		</>
 	);

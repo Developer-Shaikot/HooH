@@ -4,13 +4,11 @@ import { toast } from "sonner";
 import Loading from "../pages/Loading";
 
 const Admin = ({ children }) => {
-	const { user, isLoading, isSuccess } = useAuth();
-	console.log(user, isSuccess);
+	const { user, isLoading } = useAuth();
 
 	if (isLoading) return <Loading />;
 
 	if (user?.user_type !== "admin") {
-		console.log(user);
 		toast.error("Unauthorized access");
 		return <Navigate to="/" replace />;
 	}

@@ -12,9 +12,10 @@ import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
 import { ArrowRightStartOnRectangleIcon } from "@heroicons/react/24/outline";
 import { useLogoutMutation } from "../../feature/auth/authSlice";
 import { toast } from "sonner";
+import { defaultImage } from "../../../constant";
 
 export default function Navbar() {
-	const { user, isSuccess, resetAuth } = useAuth();
+	const { user, resetAuth } = useAuth();
 	const [notificationPopup, setNotificationPopup] = useState(false);
 	const [loginFormVisible, setLoginFormVisible] = useState(true); // State for login form visibility
 	const [sidebarVisible, setSidebarVisible] = useState(false); // State for sidebar visibility
@@ -29,7 +30,6 @@ export default function Navbar() {
 	}
 
 	function toggleSidebar() {
-		console.log("clicked", sidebarVisible);
 		setSidebarVisible(!sidebarVisible);
 	}
 
@@ -58,12 +58,12 @@ export default function Navbar() {
 					<button onClick={toggleSidebar} className="md:hidden">
 						{/* Hamburger icon */}
 					</button>
-					{isSuccess ? (
+					{user?._id ? (
 						<Popover className="relative">
 							<PopoverButton className="mt-1.5">
 								<div className="relative">
 									<img
-										src={user?.profilePicture}
+										src={defaultImage}
 										className="w-8 h-8 rounded-full leading-[0]"
 										alt=""
 									/>
@@ -71,13 +71,13 @@ export default function Navbar() {
 							</PopoverButton>
 							<PopoverPanel
 								anchor="bottom"
-								className="flex flex-col bg-slate-300 rounded-xl z-[60] mt-3 p-3 shadow-lg"
+								className="flex flex-col bg-slate-100 rounded-xl z-[60] mt-3 p-3 shadow-lg"
 							>
 								<p>{user?.name}</p>
 								<div className="border-gray-400 border-b my-2" />
 								<div
 									onClick={handleLogout}
-									className="hover:bg-slate-200 rounded-md py-1 px-2 cursor-pointer flex items-center gap-1"
+									className="hover:bg-slate-50 rounded-md py-1 px-2 cursor-pointer flex items-center gap-1"
 								>
 									<ArrowRightStartOnRectangleIcon className="size-5 text-red-500" />{" "}
 									<p>{isLoading ? "Loading..." : "Logout"}</p>
