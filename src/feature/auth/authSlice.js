@@ -19,7 +19,7 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
 				method: "POST",
 				body,
 			}),
-			invalidatesTags: ["Profile", "PendingReceive"],
+			invalidatesTags: ["User"],
 		}),
 
 		logout: builder.mutation({
@@ -28,13 +28,12 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
 				method: "POST",
 				body,
 			}),
-			invalidatesTags: ["Profile"],
+			invalidatesTags: ["User"],
 		}),
 
 		loggedInUser: builder.query({
-			query: () => ({
-				url: "/user",
-			}),
+			query: () => ({ url: "/user" }),
+			providesTags: ["User"],
 		}),
 	}),
 });

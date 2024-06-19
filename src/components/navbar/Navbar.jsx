@@ -7,11 +7,18 @@ import IconButton from "../buttons/IconButton";
 import LoginForm from "../Login/LoginForm";
 import { Sidebar } from "../sidebar/Sidebar";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../hooks/useAuth";
+import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
+import { ArrowRightStartOnRectangleIcon } from "@heroicons/react/24/outline";
+import { useLogoutMutation } from "../../feature/auth/authSlice";
+import { toast } from "sonner";
 
 export default function Navbar() {
+	const { user, isSuccess, resetAuth } = useAuth();
 	const [notificationPopup, setNotificationPopup] = useState(false);
 	const [loginFormVisible, setLoginFormVisible] = useState(true); // State for login form visibility
 	const [sidebarVisible, setSidebarVisible] = useState(false); // State for sidebar visibility
+	const [logout, { isLoading }] = useLogoutMutation();
 
 	function closeNotificationPopup() {
 		setNotificationPopup(false);
@@ -19,11 +26,22 @@ export default function Navbar() {
 
 	function toggleLoginForm() {
 		setLoginFormVisible(!loginFormVisible);
-		console.log("loginForm");
 	}
 
 	function toggleSidebar() {
 		setSidebarVisible(!sidebarVisible);
+	}
+
+	function handleLogout() {
+		logout()
+			.unwrap()
+			.then((data) => {
+				if (data.success) {
+					setLoginFormVisible(true);
+					toast.success("Logout successful");
+					resetAuth();
+				}
+			});
 	}
 
 	return (
@@ -39,15 +57,43 @@ export default function Navbar() {
 					<button onClick={toggleSidebar} className="md:hidden">
 						{/* Hamburger icon */}
 					</button>
-					<div
-						className="w-8 h-8 flex items-center mr-3 cursor-pointer"
-						title="login"
-						onClick={() => setLoginFormVisible(true)}
-					>
-						<div className="cursor-pointer relative text-white font-semibold">
-							Login
+					{isSuccess ? (
+						<Popover className="relative">
+							<PopoverButton className="mt-1.5">
+								<div className="relative">
+									<img
+										src={user?.profilePicture}
+										className="w-8 h-8 rounded-full leading-[0]"
+										alt=""
+									/>
+								</div>
+							</PopoverButton>
+							<PopoverPanel
+								anchor="bottom"
+								className="flex flex-col bg-slate-300 rounded-xl z-[60] mt-3 p-3 shadow-lg"
+							>
+								<p>{user?.name}</p>
+								<div className="border-gray-400 border-b my-2" />
+								<div
+									onClick={handleLogout}
+									className="hover:bg-slate-200 rounded-md py-1 px-2 cursor-pointer flex items-center gap-1"
+								>
+									<ArrowRightStartOnRectangleIcon className="size-5 text-red-500" />{" "}
+									<p>{isLoading ? "Loading..." : "Logout"}</p>
+								</div>
+							</PopoverPanel>
+						</Popover>
+					) : (
+						<div
+							className="w-8 h-8 flex items-center mr-3 cursor-pointer"
+							title="login"
+							onClick={() => setLoginFormVisible(true)}
+						>
+							<div className="cursor-pointer relative text-white font-semibold">
+								Login
+							</div>
 						</div>
-					</div>
+					)}
 					<div className="w-8 h-8 flex items-center" title="Notification">
 						<div className="cursor-pointer relative">
 							<img
@@ -87,7 +133,7 @@ export default function Navbar() {
 					<Notification closeNotificationPopup={closeNotificationPopup} />
 				</Overlay>
 			)}
-			{loginFormVisible && <LoginForm onClose={setLoginFormVisible} />}
+			{!user?._id && <>{loginFormVisible && <LoginForm onClose={setLoginFormVisible} />}</>}
 			{sidebarVisible && <Sidebar />}
 		</>
 	);

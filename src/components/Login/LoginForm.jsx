@@ -4,6 +4,7 @@ import RegNonePointer from "./RegNonePointer";
 
 function LoginForm({ onClose }) {
 	const [isLoginActive, setIsLoginActive] = useState(true);
+
 	return (
 		<div className={`fixed inset-0 flex items-center justify-end z-50 pointer-events-none`}>
 			{isLoginActive ? (

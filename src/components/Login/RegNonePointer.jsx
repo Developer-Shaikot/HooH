@@ -32,7 +32,9 @@ export default function RegNonePointer({ onClose, className, setIsLoginActive })
 				.unwrap()
 				.then((data) => {
 					if (data.success) {
-						toast.success("Applied successfully");
+						toast.success(
+							"Applied successfully, wait until admin approve your application"
+						);
 					}
 					console.log(data);
 				})
@@ -43,8 +45,10 @@ export default function RegNonePointer({ onClose, className, setIsLoginActive })
 				.then((data) => {
 					if (data.success) {
 						toast.success("Registered successfully");
+						return setIsLoginActive(true);
 					}
-					console.log(data);
+					toast.error(`Error: ${data?.message}`);
+					console.error(data);
 				})
 				.catch((err) => toast.error(`Error: ${err.message}`));
 		}

@@ -1,6 +1,28 @@
 import PropTypes from "prop-types";
 import IconButton from "../buttons/IconButton";
+import { useState } from "react";
+import { useLoginMutation } from "../../feature/auth/authSlice";
+import { toast } from "sonner";
+
 export default function LoginNonePointer({ onClose, className, setIsLoginActive }) {
+	const [formData, setFormData] = useState({ email: "", password: "" });
+	const [login, { isLoading }] = useLoginMutation();
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		login(formData)
+			.unwrap()
+			.then((data) => {
+				if (data.success) {
+					onClose();
+					return toast.success("Login successful");
+				}
+				toast.error(`Error: ${data?.message}`);
+				console.error(data);
+			})
+			.catch((err) => toast.error(`Error: ${err.message}`));
+	};
+
 	return (
 		<div className={`your-existing-classes ${className}`}>
 			<div className="custom-gradient custom-backdrop-filter  h-screen mt-[160px] w-[455px]">
@@ -17,7 +39,7 @@ export default function LoginNonePointer({ onClose, className, setIsLoginActive 
 							/>
 						</div>
 						<h2 className="text-white text-center text-4xl">Sign in</h2>
-						<form>
+						<form onSubmit={handleSubmit}>
 							<div className="mt-8 text-white mb-5">
 								<input
 									placeholder="Email Address"
@@ -26,6 +48,10 @@ export default function LoginNonePointer({ onClose, className, setIsLoginActive 
 									id="email"
 									className="mt-1 mx-11 p-2 block w-4/5 bg-cyan-200 bg-opacity-10 rounded-[10px] shadow-sm border border-white"
 									required
+									value={formData.email}
+									onChange={(e) =>
+										setFormData((prev) => ({ ...prev, email: e.target.value }))
+									}
 								/>
 							</div>
 
@@ -37,6 +63,13 @@ export default function LoginNonePointer({ onClose, className, setIsLoginActive 
 									id="password"
 									className="mt-1 mx-11 p-2 block w-4/5 bg-cyan-200 bg-opacity-10 rounded-[10px] shadow-sm border border-white"
 									required
+									value={formData.password}
+									onChange={(e) =>
+										setFormData((prev) => ({
+											...prev,
+											password: e.target.value,
+										}))
+									}
 								/>
 							</div>
 							<div
@@ -51,6 +84,8 @@ export default function LoginNonePointer({ onClose, className, setIsLoginActive 
 									bg="bg-white"
 									color="text-black"
 									text="Login"
+									type="submit"
+									disabled={isLoading}
 								/>
 							</div>
 						</form>
