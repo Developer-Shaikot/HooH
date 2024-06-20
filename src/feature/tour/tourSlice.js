@@ -32,7 +32,13 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
 				}&category=${encodeURIComponent(params.category)}`,
 			providesTags: ["Tour"],
 		}),
+
+		singleTour: builder.query({
+			query: (id) => `/package/single/${id}`,
+			providesTags: ["Tour"],
+		}),
 	}),
 });
 
-export const { useAddTourMutation, useGetAllToursQuery, useSearchToursQuery } = extendedApiSlice;
+export const { useAddTourMutation, useGetAllToursQuery, useSearchToursQuery, useSingleTourQuery } =
+	extendedApiSlice;

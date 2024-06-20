@@ -48,7 +48,7 @@ export default function PackagesCard({ data }) {
 					</div>
 					<div className="flex justify-between mt-4 mx-1 my-2">
 						<div className=" text-black text-3xl font-medium">{data.price} ৳</div>
-						<Link to="/booking">
+						<Link to={`/booking/${data._id}`}>
 							<IconButton
 								height="h-10"
 								width="w-[90px]"

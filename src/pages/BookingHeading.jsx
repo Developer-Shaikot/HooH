@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 
-export default function BookingHeading() {
+export default function BookingHeading({ place }) {
 	return (
 		<div className="flex gap-2.5 sm:flex-row font-poppins flex-col items-center justify-between">
 			<div className="sm:text-start text-center">
-				<h1 className="font-semibold text-[40px] text-black-50">Welcome to Dhaka</h1>
+				<h1 className="font-semibold text-[40px] text-black-50">Welcome to {place}</h1>
 				<p className="-mt-1.5 text-[#7E7A7A]">
-					Lorem Ipsum is simply dummy text of the printing and
+					A journey for pleasure in which several different places are visited.
 				</p>
 			</div>
 			<div className="flex">

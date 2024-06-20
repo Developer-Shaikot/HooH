@@ -27,7 +27,7 @@ export default function CustomizePlan() {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		navigate(`/booking/${formData.tour}`, { state: formData });
+		navigate(`/booking/${formData.tour}`);
 	};
 
 	return (

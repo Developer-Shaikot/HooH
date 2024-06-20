@@ -1,4 +1,4 @@
-export default function BookingFields() {
+export default function BookingFields({ formData, handleChange, tourData }) {
 	return (
 		<div className="bg-[url(/images/wave.svg)] bg-bottom bg-no-repeat col-span-2 border-2 font-poppins rounded-xl border-[#006D5A6B] px-6 pt-5 pb-9">
 			<div className="mt-3">
@@ -10,7 +10,10 @@ export default function BookingFields() {
 					<input
 						type="tel"
 						placeholder="+880"
+						onChange={handleChange}
+						value={formData.mobile}
 						name="mobile"
+						required
 						className="w-full border px-3.5 py-2.5 rounded-md shadow-md border-[#006D5A6B]"
 					/>
 				</div>
@@ -23,7 +26,10 @@ export default function BookingFields() {
 				<div>
 					<input
 						type="date"
-						name="startDate"
+						name="date"
+						onChange={handleChange}
+						value={formData.date}
+						required
 						className="w-full border px-3.5 py-2.5 rounded-md shadow-md border-[#006D5A6B]"
 					/>
 				</div>
@@ -35,10 +41,11 @@ export default function BookingFields() {
 				</div>
 				<div>
 					<input
-						type="number"
 						placeholder="00"
-						min={1}
-						name="duration"
+						readOnly
+						type="text"
+						required
+						defaultValue={`${tourData?.duration} days/s`}
 						className="w-full border px-3.5 py-2.5 rounded-md shadow-md border-[#006D5A6B]"
 					/>
 				</div>
@@ -53,7 +60,10 @@ export default function BookingFields() {
 						type="number"
 						placeholder="00"
 						min={1}
+						value={formData.travelers}
+						onChange={handleChange}
 						name="travelers"
+						required
 						className="w-full bg-white border px-3.5 py-2.5 rounded-md shadow-md border-[#006D5A6B]"
 					/>
 				</div>
@@ -65,9 +75,12 @@ export default function BookingFields() {
 				</div>
 				<div>
 					<select
-						name="location"
+						required
+						name="transport"
+						onChange={handleChange}
 						className="w-full bg-white border px-3.5 py-2.5 rounded-md shadow-md border-[#006D5A6B]"
 					>
+						<option value="">Choose a travel method</option>
 						<option value="road">Road</option>
 						<option value="car">Car</option>
 						<option value="bike">Bike</option>

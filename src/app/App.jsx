@@ -20,7 +20,7 @@ function App() {
 			<AuthContext.Provider value={{ user: user || dummyUser, isLoading }}>
 				<Routers />
 				<ChatContainer />
-				<Toaster position="top-center" richColors toastOptions={{ duration: 2300 }} />
+				<Toaster position="top-center" richColors />
 			</AuthContext.Provider>
 		</>
 	);
