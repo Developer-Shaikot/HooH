@@ -14,7 +14,7 @@ import { toast } from "sonner";
 
 const initialData = {
 	budget: 0,
-	date: Date.now(),
+	date: "",
 	travelers: 1,
 	transport: "",
 	transactionId: "",

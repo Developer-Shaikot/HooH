@@ -35,8 +35,18 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
 			query: () => ({ url: "/user" }),
 			providesTags: ["User"],
 		}),
+
+		getAllGuides: builder.query({
+			query: () => ({ url: "/user/guides" }),
+			providesTags: ["User"],
+		}),
 	}),
 });
 
-export const { useRegisterMutation, useLoginMutation, useLogoutMutation, useLoggedInUserQuery } =
-	extendedApiSlice;
+export const {
+	useRegisterMutation,
+	useLoginMutation,
+	useLogoutMutation,
+	useLoggedInUserQuery,
+	useGetAllGuidesQuery,
+} = extendedApiSlice;

@@ -33,11 +33,15 @@ export default function RegNonePointer({ onClose, className, setIsLoginActive })
 				.then((data) => {
 					if (data.success) {
 						toast.success(
-							"Applied successfully, wait until admin approve your application"
+							"Applied successfully, wait until admin approve your application then you will be able to login as a guide."
 						);
+						setIsLoginActive(true);
+					} else {
+						toast.error(`Error: ${data?.message}`);
+						console.error(data);
 					}
 				})
-				.catch((err) => toast.error(`Error: ${err.message}`));
+				.catch((err) => toast.error(`Error: ${err.data?.message}`));
 		} else {
 			register(formData)
 				.unwrap()
@@ -101,7 +105,7 @@ export default function RegNonePointer({ onClose, className, setIsLoginActive })
 									type="password"
 									name="password"
 									id="password"
-									className="mt-1 mx-11 p-2 block w-4/5 bg-cyan-200 bg-opacity-10 rounded-[10px] shadow-sm border border-white"
+									className="mt-1 mx-11 p-2 block w-4/5 text-white bg-cyan-200 bg-opacity-10 rounded-[10px] shadow-sm border border-white"
 									required
 									value={formData.password}
 									onChange={handleChange}
@@ -119,25 +123,32 @@ export default function RegNonePointer({ onClose, className, setIsLoginActive })
 								<>
 									<div className="mb-4">
 										<input
-											placeholder="NID card number"
+											placeholder="NID card number (10 digit)"
 											name="nidNumber"
 											id="nid"
-											className="mt-1 mx-11 p-2 block w-4/5 bg-cyan-200 bg-opacity-10 rounded-[10px] shadow-sm border border-white"
+											className="mt-1 mx-11 p-2 block w-4/5 text-white bg-cyan-200 bg-opacity-10 rounded-[10px] shadow-sm border border-white"
 											required
 											value={formData.nidNumber}
 											onChange={handleChange}
 										/>
 									</div>
 									<div className="mb-4">
-										<input
-											placeholder="Vehicle type"
-											name="vehicle_type"
-											id="vehicle_type"
-											className="mt-1 mx-11 p-2 block w-4/5 bg-cyan-200 bg-opacity-10 rounded-[10px] shadow-sm border border-white"
+										<select
 											required
-											value={formData.vehicle_type}
+											name="vehicle_type"
 											onChange={handleChange}
-										/>
+											className="mt-1 text-yellow-50 mx-11 p-2 block w-4/5 bg-cyan-200 bg-opacity-10 rounded-[10px] shadow-sm border border-white"
+										>
+											<option className="text-black" value="">
+												Choose a vehicle type
+											</option>
+											<option className="text-black" value="car">
+												Car
+											</option>
+											<option className="text-black" value="bike">
+												Bike
+											</option>
+										</select>
 									</div>
 								</>
 							)}

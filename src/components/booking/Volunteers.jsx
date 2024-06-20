@@ -5,10 +5,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
 import Volunteer from "./Volunteer";
-import { volunteerData } from "../../../constant";
 import { useRef, useState } from "react";
+import { useGetAllGuidesQuery } from "../../feature/auth/authSlice";
 
 export default function Volunteers({ setFormData }) {
+	const { data: guideData, isLoading } = useGetAllGuidesQuery();
 	const swiperRef = useRef();
 	const [selected, setSelected] = useState("");
 
@@ -50,11 +51,16 @@ export default function Volunteers({ setFormData }) {
 					},
 				}}
 			>
-				{volunteerData.map((data) => (
-					<SwiperSlide key={data.id}>
-						<Volunteer selected={selected} handleSelect={handleSelect} data={data} />
-					</SwiperSlide>
-				))}
+				{!isLoading &&
+					guideData?.data?.map((data) => (
+						<SwiperSlide key={data._id}>
+							<Volunteer
+								selected={selected}
+								handleSelect={handleSelect}
+								data={data}
+							/>
+						</SwiperSlide>
+					))}
 			</Swiper>
 		</div>
 	);
