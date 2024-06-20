@@ -24,7 +24,7 @@ export default function Routers() {
 			</Route>
 			<Route element={<MainLayout />}>
 				<Route
-					path="/booking"
+					path="/booking/:packageId"
 					element={
 						<Protected>
 							<Booking />

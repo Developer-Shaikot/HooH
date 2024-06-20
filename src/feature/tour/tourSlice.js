@@ -17,9 +17,22 @@ export const extendedApiSlice = apiSlice.injectEndpoints({
 				};
 			},
 
+			invalidatesTags: ["Tour"],
+		}),
+
+		getAllTours: builder.query({
+			query: () => "/package",
+			providesTags: ["Tour"],
+		}),
+
+		searchTours: builder.query({
+			query: (params) =>
+				`/package/search?city=${params.city}&place=${
+					params.place
+				}&category=${encodeURIComponent(params.category)}`,
 			providesTags: ["Tour"],
 		}),
 	}),
 });
 
-export const { useAddTourMutation } = extendedApiSlice;
+export const { useAddTourMutation, useGetAllToursQuery, useSearchToursQuery } = extendedApiSlice;

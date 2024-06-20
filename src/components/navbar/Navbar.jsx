@@ -3,10 +3,8 @@ import ResponsiveBrand from "./ResponsiveBrand";
 import Notification from "../notification/Notification";
 import Overlay from "../overlay/Overlay";
 import NavBrand from "./NavBrand";
-import IconButton from "../buttons/IconButton";
 import LoginForm from "../Login/LoginForm";
 import { Sidebar } from "../sidebar/Sidebar";
-import { Link } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
 import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
 import { ArrowRightStartOnRectangleIcon } from "@heroicons/react/24/outline";
@@ -23,10 +21,6 @@ export default function Navbar() {
 
 	function closeNotificationPopup() {
 		setNotificationPopup(false);
-	}
-
-	function toggleLoginForm() {
-		setLoginFormVisible(!loginFormVisible);
 	}
 
 	function toggleSidebar() {
@@ -115,17 +109,6 @@ export default function Navbar() {
 								alt="notification"
 							/>
 						</div>
-					</div>
-					<div className="hidden md:block">
-						<Link to="/booking">
-							<IconButton
-								width="w-[120px]"
-								bg="bg-white"
-								color="text-black"
-								text="Book Now"
-								onClick={toggleLoginForm}
-							/>
-						</Link>
 					</div>
 				</div>
 			</nav>

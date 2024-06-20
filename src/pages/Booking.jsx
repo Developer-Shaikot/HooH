@@ -5,8 +5,14 @@ import BookingHeading from "./BookingHeading";
 import Volunteers from "../components/booking/Volunteers";
 import TripsNote from "../components/booking/TripsNote";
 import WeatherReport from "../components/booking/WeatherReport";
+import { useLocation, useParams } from "react-router-dom";
 
 export default function Booking() {
+	const location = useLocation();
+	const params = useParams();
+
+	console.log(location.state, params.packageId);
+
 	return (
 		<section className="px-6 sm:px-8 md:px-12 py-5">
 			{/* ======================= heading section ========================= */}

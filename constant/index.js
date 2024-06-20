@@ -393,6 +393,7 @@ export const cities = {
 			"Dhakeshwari Temple",
 			"National Museum",
 			"Liberation War Museum",
+			"Sonargaon",
 			"Old Dhaka Combo",
 		],
 	},
