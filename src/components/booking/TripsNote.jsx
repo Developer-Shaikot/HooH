@@ -1,4 +1,4 @@
-export default function TripsNote() {
+export default function TripsNote({ formData, handleChange }) {
 	return (
 		<div className="col-span-3 border-2 font-poppins rounded-xl border-[#006D5A6B]">
 			<div className="bg-primary text-center justify-center border-t-0 border-l-0 rounded-tl-lg w-[130px] text-white flex gap-1.5 text-sm px-3 py-2">
@@ -35,7 +35,13 @@ export default function TripsNote() {
 					</li>
 				</ul>
 				<div className="flex gap-2 items-center font-semibold mt-6">
-					<input type="checkbox" className="accent-primary cursor-pointer" />
+					<input
+						name="condition"
+						defaultChecked={formData.condition}
+						onChange={handleChange}
+						type="checkbox"
+						className="accent-primary cursor-pointer"
+					/>
 					<span>Agree with Terms and conditions</span>
 				</div>
 			</div>

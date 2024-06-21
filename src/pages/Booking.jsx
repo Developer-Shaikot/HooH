@@ -5,12 +5,13 @@ import BookingHeading from "./BookingHeading";
 import Volunteers from "../components/booking/Volunteers";
 import TripsNote from "../components/booking/TripsNote";
 import WeatherReport from "../components/booking/WeatherReport";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useSingleTourQuery } from "../feature/tour/tourSlice";
 import Loading from "../pages/Loading";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useAuth } from "./../hooks/useAuth";
 import { toast } from "sonner";
+import { useAddBookingMutation } from "../feature/booking/bookingSlice";
 
 const initialData = {
 	budget: 0,
@@ -22,23 +23,51 @@ const initialData = {
 	package: "",
 	guide: "",
 	mobile: "",
+	condition: false,
 };
 
 export default function Booking() {
+	const navigate = useNavigate();
 	const { user } = useAuth();
 	const params = useParams();
+	const [addBooking, { isLoading: isAdding }] = useAddBookingMutation();
 
 	const { data: tourData, isLoading } = useSingleTourQuery(params.packageId);
 	const [formData, setFormData] = useState(initialData);
 
+	useEffect(() => {
+		setFormData((prev) => {
+			const transportFees =
+				prev.transport === "car" ? 300 : prev.transport === "bike" ? 200 : 0;
+			return {
+				...prev,
+				budget: tourData?.data?.price * prev.travelers + transportFees,
+			};
+		});
+	}, [formData.travelers, formData.transport, tourData]);
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		if (!formData.condition) return toast.error("First accept the terms and conditions");
 		if (!formData.guide) return toast.error("Choose a appropriate guide for you");
-		console.log({ ...formData, package: tourData?.data?._id, bookingBy: user?._id });
-		// TODO: booking mutation here
-		toast.success(
-			"Booking successful, wait for to admin approval. You will be notified by email."
-		);
+
+		addBooking({ ...formData, package: tourData?.data?._id, bookingBy: user?._id })
+			.unwrap()
+			.then((data) => {
+				if (data.success) {
+					toast.success(
+						"Booking successful, wait for to admin approval. You will be notified by email."
+					);
+					navigate("/");
+				} else {
+					toast.error(`Error: ${data.message}`);
+					console.error(data);
+				}
+			})
+			.catch((err) => {
+				toast.error(`Error: ${err.data?.message}`);
+				console.error(err);
+			});
 	};
 
 	const handleChange = (e) => {
@@ -50,13 +79,13 @@ export default function Booking() {
 	return (
 		<form className="px-6 sm:px-8 md:px-12 py-5" onSubmit={handleSubmit}>
 			{/* ======================= heading section ========================= */}
-			<BookingHeading place={tourData.data?.place} />
+			<BookingHeading place={tourData?.data?.place} />
 
 			{/* ===================== about section ================================= */}
 			<div className="mt-7">
 				<BookingAbout
-					packageAvatar={tourData.data?.packageAvatar}
-					description={tourData.data?.description}
+					packageAvatar={tourData?.data?.packageAvatar}
+					description={tourData?.data?.description}
 				/>
 			</div>
 
@@ -66,7 +95,7 @@ export default function Booking() {
 					<BookingFields
 						formData={formData}
 						handleChange={handleChange}
-						tourData={tourData.data}
+						tourData={tourData?.data}
 					/>
 					{/* ---------------- place information -------------- */}
 					<PlaceInformation />
@@ -80,7 +109,7 @@ export default function Booking() {
 
 			{/* ======================== trips info section =========================== */}
 			<div className="grid grid-cols-1 sm:grid-cols-5 my-10 gap-y-4 sm:gap-4">
-				<TripsNote />
+				<TripsNote handleChange={handleChange} formData={formData} />
 				<WeatherReport />
 			</div>
 
@@ -113,7 +142,11 @@ export default function Booking() {
 						</a>
 					</span>
 				</div>
-				<button className="text-white font-semibold bg-primary hover:bg-teal-600 px-4 py-2.5 w-[230px] rounded-md">
+				<button
+					disabled={isAdding}
+					type="submit"
+					className="text-white font-semibold bg-primary hover:bg-teal-600 px-4 py-2.5 w-[230px] rounded-md"
+				>
 					Checkout Now {">"}
 				</button>
 			</div>

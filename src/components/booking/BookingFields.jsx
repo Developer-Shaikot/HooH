@@ -30,6 +30,7 @@ export default function BookingFields({ formData, handleChange, tourData }) {
 						onChange={handleChange}
 						value={formData.date}
 						required
+						min={new Date().toISOString().split("T")[0]}
 						className="w-full border px-3.5 py-2.5 rounded-md shadow-md border-[#006D5A6B]"
 					/>
 				</div>
@@ -81,9 +82,9 @@ export default function BookingFields({ formData, handleChange, tourData }) {
 						className="w-full bg-white border px-3.5 py-2.5 rounded-md shadow-md border-[#006D5A6B]"
 					>
 						<option value="">Choose a travel method</option>
-						<option value="road">Road</option>
-						<option value="car">Car</option>
-						<option value="bike">Bike</option>
+						<option value="road">Road (0tk)</option>
+						<option value="car">Car (+300tk)</option>
+						<option value="bike">Bike (+200tk)</option>
 					</select>
 				</div>
 			</div>

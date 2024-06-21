@@ -11,8 +11,8 @@ import { toast } from "sonner";
 export default function VolunteerRow({ selectRow, selectedData, data }) {
 	const [showMore, setShowMore] = useState(false);
 	const [isAvailable, setIsAvailable] = useState(data.status === "accepted");
-	const [accept] = useAcceptGuideMutation();
-	const [reject] = useDeclineGuideMutation();
+	const [accept, { isLoading }] = useAcceptGuideMutation();
+	const [reject, { isLoading: isRejecting }] = useDeclineGuideMutation();
 
 	const toggleMore = () => setShowMore(!showMore);
 
@@ -75,6 +75,7 @@ export default function VolunteerRow({ selectRow, selectedData, data }) {
 			<TableData className="hidden font-public-sans md:table-cell px-2">
 				<div className="py-4">
 					<Switch
+						disabled={isLoading || isRejecting}
 						onChange={handleToggle}
 						checked={isAvailable}
 						onColor="#10B981"
