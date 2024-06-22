@@ -20,6 +20,8 @@ function BookingDashboard() {
 	const { data: bookingData, isLoading } = useGetAllBookingQuery();
 	const [tableData, setTableData] = useState([]);
 
+	console.log(bookingData);
+
 	useEffect(() => {
 		setTableData(() =>
 			bookingData?.data.map((data) => ({
@@ -28,7 +30,7 @@ function BookingDashboard() {
 					txId: data.transactionId,
 					visibleCheckbox: true,
 				},
-				name: data.bookingBy?.name,
+				name: data.bookingBy?.name || data.guide?.name,
 				selectedGuide: data.guide?.name,
 				mobile: data.mobile,
 				location: data.package?.place,

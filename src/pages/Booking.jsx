@@ -86,6 +86,7 @@ export default function Booking() {
 				<BookingAbout
 					packageAvatar={tourData?.data?.packageAvatar}
 					description={tourData?.data?.description}
+					price={tourData?.data?.price}
 				/>
 			</div>
 
