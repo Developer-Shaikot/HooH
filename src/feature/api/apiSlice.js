@@ -1,11 +1,12 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const apiSlice = createApi({
-	reducerPath: "api",
-	baseQuery: fetchBaseQuery({
-		baseUrl: "http://localhost:8080/api",
-		credentials: "include",
-	}),
-	tagTypes: ["User", "Tour"],
-	endpoints: () => ({}),
+    reducerPath: "api",
+    baseQuery: fetchBaseQuery({
+        // baseUrl: "http://localhost:8080/api",
+        baseUrl: "https://hooh-backend.onrender.com/api",
+        credentials: "include",
+    }),
+    tagTypes: ["User", "Tour"],
+    endpoints: () => ({}),
 });
