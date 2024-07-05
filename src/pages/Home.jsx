@@ -1,10 +1,11 @@
 import About from "../components/About/About";
+import Blog from "../components/Blog/Blog";
 import Event from "../components/Events/Event";
 import Carousel from "../components/Home/Carousel";
 import CustomizePlan from "../components/Home/CustomizePlan";
 import TopVlaueSection from "../components/Home/TopVlaueSection";
-import Package from "../components/Packages/Package";
 
+import Package from "../components/Packages/Package";
 export default function Home() {
     return (
         <section>
@@ -31,9 +32,14 @@ export default function Home() {
             <section className="px-0 md:px-40 py-24 pb-12 ">
                 <Event />
             </section>
-            <section className="px-32 py-10 bg-teal-100 h-5  border-t border-emerald-700 pb-0 hidden lg:block">
+            <section className="px-32 py-10 border-t border-emerald-700 pb-0 hidden lg:block">
                 <div className="mt-12">
                     <About />
+                </div>
+            </section>
+            <section className="px-0 md:px-40 pt-12 pb-12 bg-teal-100 h-full">
+                <div className="mt-12">
+                    <Blog />
                 </div>
             </section>
         </section>

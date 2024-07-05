@@ -73,7 +73,7 @@ const AddTour = () => {
                         </label>
                         <input
                             required
-                            className="appearance-none block w-full border-sky-300 text-[#006d5a] border py-3 px-4 mb-3 leading-tight focus:outline-none focus rounded-3xl"
+                            className="appearance-none block w-full border-[#006D5A6B] text-[#006d5a] border py-3 px-4 mb-3 leading-tight focus:outline-none focus rounded-3xl"
                             type="text"
                             placeholder="Tour name"
                             name="name"
@@ -168,7 +168,7 @@ const AddTour = () => {
                         rows={4}
                         required
                         value={formData.description}
-                        className="block w-full border-sky-300 text-[#006d5a] border py-3 px-4 mb-3 leading-tight focus:outline-none focus rounded-3xl"
+                        className="block w-full border-[#006D5A6B] text-[#006d5a] border py-3 px-4 mb-3 leading-tight focus:outline-none focus rounded-3xl"
                     ></textarea>
                 </div>
                 <div className="flex flex-wrap -mx-3 mb-3">
@@ -181,7 +181,7 @@ const AddTour = () => {
                         </label>
                         <input
                             required
-                            className="appearance-none block w-full border-sky-300 text-[#006d5a] border py-3 px-4 mb-3 leading-tight focus:outline-none focus rounded-3xl"
+                            className="appearance-none block w-full border-[#006D5A6B] text-[#006d5a] border py-3 px-4 mb-3 leading-tight focus:outline-none focus rounded-3xl"
                             type="number"
                             min={1}
                             placeholder="Tour duration"
@@ -199,7 +199,7 @@ const AddTour = () => {
                         </label>
                         <input
                             required
-                            className="appearance-none block w-full border-sky-300 text-[#006d5a] border py-3 px-4 mb-3 leading-tight focus:outline-none focus rounded-3xl"
+                            className="appearance-none block w-full border-[#006D5A6B] text-[#006d5a] border py-3 px-4 mb-3 leading-tight focus:outline-none focus rounded-3xl"
                             type="number"
                             min={300}
                             placeholder="Tour price"
@@ -227,7 +227,7 @@ const AddTour = () => {
                                     onChange={handleFileChange}
                                 />
                                 <div
-                                    className={`h-10 w-full flex justify-center items-center border-dashed text-[#006d5a] border-2 border-sky-300 rounded-3xl ${
+                                    className={`h-10 w-full flex justify-center items-center border-dashed text-[#006d5a] border-2 border-[#006D5A6B] rounded-3xl ${
                                         file ? "border-green-400" : ""
                                     }`}
                                 >
