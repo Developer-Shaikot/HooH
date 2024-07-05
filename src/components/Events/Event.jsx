@@ -5,7 +5,7 @@ import Events from "./Events";
 
 export default function Event() {
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-4 place-content-center gap-5 px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-4 place-content-center gap-5 px-12">
             <div className="flex justify-center flex-col">
                 <h1 className="text-4xl">Upcoming Events</h1>
                 <p className="text-xl pt-5 w-56">

@@ -31,7 +31,7 @@ export default function Home() {
             <section className="px-0 md:px-40 py-24 pb-12 ">
                 <Event />
             </section>
-            <section className="px-32 py-10 bg-teal-100 h-5  border-t border-emerald-700 pb-0 hidden md:block">
+            <section className="px-32 py-10 bg-teal-100 h-5  border-t border-emerald-700 pb-0 hidden lg:block">
                 <div className="mt-12">
                     <About />
                 </div>
