@@ -39,8 +39,6 @@ export default function Navbar() {
             });
     }
 
-    console.log(user);
-
     return (
         <>
             <nav className="h-[82px] bg-default-theme dark:bg-dark-theme border-gray-200 dark:border-slate-700 ml-0 flex items-center gap-2 p-4 md:p-6 justify-between z-50 sticky top-0">
