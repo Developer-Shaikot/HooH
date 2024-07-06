@@ -1,12 +1,47 @@
 import About from "../components/About/About";
 import Blog from "../components/Blog/Blog";
+import Contact from "../components/contact/Contact";
 import Event from "../components/Events/Event";
 import Carousel from "../components/Home/Carousel";
 import CustomizePlan from "../components/Home/CustomizePlan";
 import TopVlaueSection from "../components/Home/TopVlaueSection";
 
 import Package from "../components/Packages/Package";
+import { useEffect } from "react";
+import Review from "../components/review/Review";
+
 export default function Home() {
+    useEffect(() => {
+        const scrollToTop = () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        };
+
+        const scrollToBottom = () => {
+            window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+        };
+
+        const scrollDownBtn = document.getElementById("scroll-down-btn");
+        const scrollUpBtn = document.getElementById("scroll-up-btn");
+
+        if (scrollDownBtn) {
+            scrollDownBtn.addEventListener("click", scrollToBottom);
+        }
+
+        if (scrollUpBtn) {
+            scrollUpBtn.addEventListener("click", scrollToTop);
+        }
+
+        return () => {
+            if (scrollDownBtn) {
+                scrollDownBtn.removeEventListener("click", scrollToBottom);
+            }
+
+            if (scrollUpBtn) {
+                scrollUpBtn.removeEventListener("click", scrollToTop);
+            }
+        };
+    }, []);
+
     return (
         <section>
             <h1 className="sr-only">Home section</h1>
@@ -20,8 +55,8 @@ export default function Home() {
                 <CustomizePlan />
             </section>
             <section className="pb-12">
-                <div className="w-full h-28 bg-[#53FFE126]  flex items-center justify-center">
-                    <div className="text-black text-xl sm:text-4xl font-bold uppercase ">
+                <div className="w-full h-28 bg-[#53FFE126] flex items-center justify-center">
+                    <div className="text-black text-xl sm:text-4xl font-bold uppercase">
                         Popular Package Tours
                     </div>
                 </div>
@@ -29,7 +64,7 @@ export default function Home() {
             <section className="px-10 md:px-40 pb-24 border-[#006D5A57] border-b-2">
                 <Package />
             </section>
-            <section className="px-0 md:px-40 py-24 pb-12 ">
+            <section className="px-0 md:px-40 py-24 pb-12">
                 <Event />
             </section>
             <section className="px-32 py-10 border-t border-emerald-700 pb-0 hidden lg:block">
@@ -42,6 +77,26 @@ export default function Home() {
                     <Blog />
                 </div>
             </section>
+            <section className="px-0 md:px-20 pt-12 pb-12 h-full">
+                <Contact />
+            </section>
+            <section className="px-0 md:px-20 pt-12 pb-12 h-full">
+                <Review />
+            </section>
+            <div>
+                <img
+                    src="/images/upload.png"
+                    alt="upload"
+                    id="scroll-up-btn"
+                    className="fixed cursor-pointer bottom-52 w-12 right-4 bg-gray-200 text-white rounded-full p-4 shadow-lg transform hover:scale-110 transition duration-300 ease-in-out"
+                />
+                <img
+                    src="/images/down-arrow.png"
+                    alt="down-arrow"
+                    id="scroll-down-btn"
+                    className="fixed cursor-pointer bottom-36 w-12 right-4 bg-gray-200 text-white rounded-full p-4 shadow-lg transform hover:scale-110 transition duration-300 ease-in-out"
+                />
+            </div>
         </section>
     );
 }
