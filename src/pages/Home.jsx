@@ -9,6 +9,7 @@ import TopVlaueSection from "../components/Home/TopVlaueSection";
 import Package from "../components/Packages/Package";
 import { useEffect } from "react";
 import Review from "../components/review/Review";
+import CarouselPartner from "../components/partners/CarouselPartner";
 
 export default function Home() {
     useEffect(() => {
@@ -80,8 +81,11 @@ export default function Home() {
             <section className="px-4 sm:px-10 md:px-20 lg:px-40 pt-12 pb-12 h-full">
                 <Contact />
             </section>
-            <section className="px-4 sm:px-10 md:px-20 lg:px-40 pt-12 pb-12 h-full">
+            <section className="px-4 sm:px-10 md:px-20 lg:px-40 pt-12 pb-2 h-full">
                 <Review />
+            </section>
+            <section className="pt-5 pb-10 h-full">
+                <CarouselPartner />
             </section>
             <div>
                 <img
