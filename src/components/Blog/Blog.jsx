@@ -10,7 +10,7 @@ function Blog() {
                     Ipsum has been the industry&apos;s standard dummy text ever since the 1500s,
                 </p>
             </div>
-            <div className="grid grid-cols-2 xl:grid-cols-4  gap-8 place-items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4  gap-8 place-items-center px-5">
                 <div className="bg-white rounded-lg shadow-md max-w-xs">
                     <img
                         src="/images/Kuakata.jpg"

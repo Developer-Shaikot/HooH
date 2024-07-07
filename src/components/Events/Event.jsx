@@ -5,8 +5,8 @@ import Events from "./Events";
 
 export default function Event() {
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-4  gap-5 px-8">
-            <div className="flex justify-center flex-col">
+        <div className="grid grid-cols-1 xl:grid-cols-4  gap-5 px-8">
+            <div className="flex items-center justify-center flex-col">
                 <h1 className="text-4xl">Upcoming Events</h1>
                 <p className="text-xl pt-5 w-56">
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem

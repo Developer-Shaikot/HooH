@@ -37,7 +37,9 @@ export default function Carousel() {
                 <div className="tex-xl sm:text-4xl font-bold uppercase">
                     the extraordinary HOOH Travel
                 </div>
-                <div className="mt-4 text-xl">Explore and book your place to visit</div>
+                <div className="mt-4 text-lg lg:tex-xl text-center px-5">
+                    Explore and book your place to visit
+                </div>
                 {/* <div className="mt-6">
                     <IconButton
                         height="h-10"

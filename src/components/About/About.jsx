@@ -6,7 +6,7 @@ export default function About() {
                 <img src="/icons/DASHHHH.svg" alt="Dash Icon" className="mr-3" />
                 <div className="text-black text-xl font-normal">OUR SERVICES FOR CLIENTS</div>
             </div>
-            <hr className="w-[450px] 2xl:w-[390px] h-px origin-top-left rotate-90 border-dashed border-2 border-emerald-700 ml-8" />
+            <hr className="w-[350px] sm:w-[350px] md:w-[350px] lg:w-[420px] xl:w-[410px] 2xl:w-[395px] h-px origin-top-left rotate-90 border-dashed border-2 border-emerald-700 ml-8" />
 
             <div className="ml-8">
                 {" "}

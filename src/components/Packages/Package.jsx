@@ -32,6 +32,9 @@ export default function Package() {
                         slidesPerView: 2,
                     },
                     1024: {
+                        slidesPerView: 2,
+                    },
+                    1440: {
                         slidesPerView: 3,
                     },
                 }}
