@@ -121,7 +121,7 @@ function Blog() {
                 </div>
             </div>
             <div className="text-center mt-8">
-                <button className="bg-green-500 text-white px-4 py-2 rounded-full">
+                <button className="bg-[#006D5A] text-white px-4 py-2 rounded-full">
                     View More
                 </button>
             </div>

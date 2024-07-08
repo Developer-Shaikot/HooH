@@ -10,6 +10,7 @@ import Package from "../components/Packages/Package";
 import { useEffect } from "react";
 import Review from "../components/review/Review";
 import CarouselPartner from "../components/partners/CarouselPartner";
+import Footer from "../components/Footer/Footer";
 
 export default function Home() {
     useEffect(() => {
@@ -86,6 +87,9 @@ export default function Home() {
             </section>
             <section className="pt-5 pb-10 h-full">
                 <CarouselPartner />
+            </section>
+            <section className="pt-5 h-full">
+                <Footer />
             </section>
             <div>
                 <img
