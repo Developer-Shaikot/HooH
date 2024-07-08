@@ -7,7 +7,6 @@ export default function BookingFields({ formData, handleChange, tourData }) {
                     Mobile number
                 </div>
                 <div>
-                    z
                     <input
                         type="tel"
                         placeholder="+880"
