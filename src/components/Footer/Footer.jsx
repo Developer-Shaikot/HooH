@@ -7,46 +7,78 @@ const Footer = () => {
                 <div className="container mx-auto flex flex-wrap justify-between">
                     <div className="flex items-center flex-col w-full sm:w-1/4 mb-4 sm:mb-0">
                         <h2 className="font-bold mb-2">Pages</h2>
-                        <a href="#" className="mb-1">
-                            First Link
+                        <a
+                            href="https://theplanetd.com/"
+                            target="_blank"
+                            className="mb-1 underline"
+                        >
+                            The Planet
                         </a>
-                        <a href="#" className="mb-1">
-                            Second Link
+                        <a
+                            href="https://www.theblondeabroad.com/"
+                            target="_blank"
+                            className="mb-1 underline"
+                        >
+                            The Blonde Abroad
                         </a>
-                        <a href="#" className="mb-1">
-                            Third Link
+                        <a
+                            href="https://www.nomadicmatt.com/"
+                            target="_blank"
+                            className="mb-1 underline"
+                        >
+                            Nomadic Matt
                         </a>
-                        <a href="#" className="mb-1">
-                            Fourth Link
+                        <a
+                            href="https://www.thebrokebackpacker.com/"
+                            target="_blank"
+                            className="mb-1 underline"
+                        >
+                            The Broke Backpacker
                         </a>
                     </div>
                     <div className="flex items-center flex-col w-full sm:w-1/4 mb-4 sm:mb-0">
                         <h2 className="font-bold mb-2">Useful Links</h2>
-                        <a href="#" className="mb-1">
-                            First Link
+                        <a
+                            href="https://www.oneikathetraveller.com/"
+                            target="_blank"
+                            className="mb-1 underline"
+                        >
+                            Oneika Traveller
                         </a>
-                        <a href="#" className="mb-1">
-                            Second Link
+                        <a
+                            href="https://www.alongdustyroads.com/"
+                            target="_blank"
+                            className="mb-1 underline"
+                        >
+                            Along Dusty Road
                         </a>
-                        <a href="#" className="mb-1">
-                            Third Link
+                        <a
+                            href="https://expertvagabond.com/"
+                            target="_blank"
+                            className="mb-1 underline"
+                        >
+                            Expert Vagabond
                         </a>
-                        <a href="#" className="mb-1">
-                            Fourth Link
+                        <a
+                            href="https://www.bemytravelmuse.com/"
+                            target="_blank"
+                            className="mb-1 underline"
+                        >
+                            Be My Travel
                         </a>
                     </div>
                     <div className="flex items-center flex-col w-full sm:w-1/4 mb-4 sm:mb-0">
                         <h2 className="font-bold mb-2">Contacts</h2>
-                        <a href="#" className="mb-1 underline">
+                        <a href="tel:+8801833440993" className="mb-1 underline">
                             +8801833440993
                         </a>
-                        <a href="#" className="mb-1 underline">
+                        <a href="tel:+8801920012744" className="mb-1 underline">
                             +8801920012744
                         </a>
-                        <a href="#" className="mb-1 underline">
+                        <a href="tel:+8801308673831" className="mb-1 underline">
                             +8801308673831
                         </a>
-                        <a href="#" className="mb-1 underline">
+                        <a href="tel:+8801604326337" className="mb-1 underline">
                             +8801604326337
                         </a>
                     </div>
